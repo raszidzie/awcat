@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html  class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/static/img/fullstack_astronaut.png">
+    <meta name="title" content="FullStack Astronaut">
+    <meta name="author" content="fullstack astronaut">
+    <meta name="description" content="{{post.description|truncatewords:150|safe}}">
+    <meta property="og:url" content="fullstackastronaut.com/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/static/img/fullstack_astronaut.png">
+    <meta name="keywords" content="django, python, what is django, react.js, how to build website, power of python, fullstackastronaut.com">
+    <meta charset="UTF-8">
+    <title>Blog</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/linearicons.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/nice-select.css">	
+    <link rel="stylesheet" href="/static/css/hexagons.min.css">							
+    <link rel="stylesheet" href="/static/css/animate.min.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135529058-1"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'UA-135529058-1');
+      </script>
+    </head>
+    <body>	
+          <header id="header" id="home">
+            <div class="container main-menu">
+                <div class="row align-items-center justify-content-between d-flex">
+                  <div id="logo">
+                    <a href="{% url 'home'%}"><img src="/static/img/fullstack_astronaut.png" width="50rem"alt="logo" title="" /></a>                 
+                 </div>
+                 <nav id="nav-menu-container">
+                        <ul class="nav-menu">
+                          <li class="menu-active"><a href="{% url 'home' %}">Home</a></li>
+                          <li><a href="{% url 'blog:blog' %}">Blog</a></li>
+                          <li><a href="{% url 'event:events'%}">Events</a></li>
+                          
+                        </ul>
+                      </nav>      	    		
+                </div>
+            </div>
+          </header>
+          
+        <section class="banner-area relative" id="home">	
+            <div class="container">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="about-content col-lg-12">
+                        <h1 id="reduce" class="text-white">
+                            Work hard, help others & success will follow
+                            			
+                        </h1>	
+                        <p class="text-white link-nav"><a href="index.html">Infinity</a>  <span class="fas fa-rocket"></span>  <a href="blog-home.html"> Beyond </a></p>
+                    </div>											
+                </div>
+            </div>
+        </section>
+        
+        <section class="blog-posts-area section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 post-list blog-post-list">
+                            <label class="switchSmall m5">
+                                    <p>Switch Theme</p>
+                                <input id="theme" type="checkbox">
+                                <small></small>
+                                </label>
+                        {% for post in posts %}
+                        <div class="single-post">
+                                <a href="{% url 'blog:detail' post.slug %}">
+                            <img class="img-fluid blog-scifi" src="/media/{{post.image}}" alt="{{post.title}}">
+                                </a>
+                            <a href="{% url 'blog:detail' post.slug %}">
+                                <h1 id="reduce">
+                                    {{post.title}}
+                                </h1>
+                                <h6>{{post.category}}</h6>
+                            </a>
+                                <p>
+                                    {{post.description|truncatewords:7|safe}}
+                                </p>
+                            <div class="bottom-meta">
+                                <div class="user-details row align-items-center">
+                                    <div class="comment-wrap col-lg-12">
+                                        <ul>
+                                            <li><a href="#"><span class="fas fa-eye details-row" style="color:#a015f5;"></span> <p  class="details-row">{{post.views}}</p></a></li>
+                                            <li><a href="#"><span class="fas fa-calendar-week details-row" style="color:#a015f5;"></span> <p  class="details-row">{{post.published}}</p> </a></li>
+                                        </ul>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="paginator">
+                        {% if posts.has_other_pages %}
+                         <ul class="pagination my-4">
+                            {% for i in posts.paginator.page_range %}
+                              {% if posts.number == i %}
+                                 <li class="active page-btn" style="margin:2px;"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                              {% else %}
+                                  <li><a class="page-btn" href="?page={{ i }}" style="margin:2px;">{{ i }}</a></li>
+                              {% endif %}
+                            {% endfor %}
+             
+                         </ul>
+                        {% endif %}
+                        </div>																					
+                    </div>
+                    <div class="col-lg-4 sidebar">
+                        <div class="single-widget search-widget">
+                            <form class="example"role="search" method="GET" action="">
+                              <input type="text" placeholder="Search Posts" name="q">
+                              <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>								
+                        </div>
+
+                        <div class="single-widget protfolio-widget">
+                            <img src="/static/img/avatar-fa.jpg"  width="40%" style="border-radius: 50%" alt="">
+                            <a href="#"><h4 style="color:rgb(55, 56, 56)">coderasha</h4></a>
+                            <p>
+                                    I am a fullstack_astronaut with a vast array of knowledge in many different front end and back end languages, responsive frameworks, databases, and best code practices.
+                                     My objective is simply to communicate with the other web astronaust.
+                                      I am dedicated to perfecting my craft by learning from more seasoned developers, remaining humble, and continuously launching DevRockets to learn all that
+                                       I can about development.
+                            </p>							
+                        </div>
+
+                       
+
+                    </div>
+                </div>
+            </div>	
+        </section>
+        
+        <footer class="footer-area section-gap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
+                            <div class="single-footer-widget">
+                                <h6>Stay Connected!</h6>
+                                <ul class="footer-nav">
+                                    Join me! Let's discover web space together!<br>
+                                    Challenges coming soon.
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6  col-md-12">
+                            <div class="single-footer-widget newsletter">
+                               
+                                <h6>Contact with me!</h6>
+                                <p>I will reply to your email!</p>
+                                <div id="mc_embed_signup">
+                                    <form method="POST" class="form-inline" id="contact-form">
+                                         {% csrf_token %}
+                                        <div class="form-group row" style="width: 100%">
+                                            <div class="col-lg-8 col-md-12">
+                                                <input id="email" name="EMAIL" class="my-2" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                                                <textarea id="message" name="MESSAGE"class="my-2" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" ></textarea>
+                                            </div>   
+                                        </div>	
+                                        
+                                        <button id="send" type="submit" class="send-btn"></button>	
+                                        
+                                    </form>
+                                    
+                                </div>		
+                            </div>
+                        </div>
+                        <div class="col-lg-2  col-md-12 footer-social">
+                            <a href="https://twitter.com/coderasha" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="https://instagram.com/coderasha"  target="_blank"><i class="fa fa-instagram"></i></a>
+                        </div>						
+                    </div>
+    
+                    <div class="row footer-bottom d-flex justify-content-between">
+                        <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+     &copy;<script>document.write(new Date().getFullYear());</script> | FullStack Astronaut 
+    </p>     
+                    </div>
+                </div>
+            </footer>
+        <script src="/static/js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="/static/js/vendor/bootstrap.min.js"></script>			
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+          <script src="/static/js/easing.min.js"></script>			
+        <script src="/static/js/hoverIntent.js"></script>
+        <script src="/static/js/superfish.min.js"></script>	
+        <script src="/static/js/jquery.ajaxchimp.min.js"></script>
+        <script src="/static/js/jquery.magnific-popup.min.js"></script>	
+        <script src="/static/js/owl.carousel.min.js"></script>	
+        <script src="/static/js/hexagons.min.js"></script>							
+        <script src="/static/js/jquery.nice-select.min.js"></script>	
+        <script src="/static/js/jquery.counterup.min.js"></script>
+        <script src="/static/js/waypoints.min.js"></script>							
+        <script src="/static/js/mail-script.js"></script>	
+        <script src="/static/js/main.js"></script>	
+        <script src="/static/js/ajax-calls.js"></script>
+    </body>
+</html>
+

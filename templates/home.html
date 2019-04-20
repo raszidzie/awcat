@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/static/img/fullstack_astronaut.png">
+    <meta name="title" content="FullStack Astronaut">
+    <meta name="author" content="fullstack astronaut">
+    <meta name="description" content="Majority of developers sharing their daily tasks without any useful information. So, I decided to change this generation from now and create fullstack astronauts community who will help each other honestly and succeed together. ">
+    <meta property="og:url" content="fullstackastronaut.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/static/img/fullstack_astronaut.png">
+    <meta name="keywords" content="django, python, what is django, react.js, how to build website, power of python, fullstackastronaut.com">
+    <meta charset="UTF-8">
+    <title>fullstack astronaut</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+      
+        <link rel="stylesheet" href="/static/css/linearicons.css">
+        <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/magnific-popup.css">
+        <link rel="stylesheet" href="/static/css/nice-select.css">	
+        <link rel="stylesheet" href="/static/css/hexagons.min.css">							
+        <link rel="stylesheet" href="/static/css/animate.min.css">
+        <link rel="stylesheet" href="/static/css/owl.carousel.css">
+        <link rel="stylesheet" href="/static/css/spacestyle.css">
+        <link rel="stylesheet" href="/static/css/responsive.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135529058-1"></script>
+        <script>
+           window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+
+           gtag('config', 'UA-135529058-1');
+          </script>
+
+</head>
+
+    <body>	
+          <header id="header" id="home">
+            <div class="container main-menu">
+                <div class="row align-items-center justify-content-between d-flex">
+                  <div id="logo">
+                    <a href="{% url 'home'%}"><img src="/static/img/fullstack_astronaut.png" width="50rem"alt="" title="" /></a>
+                  </div>
+                  <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                      <li class="menu-active"><a href="{% url 'home' %}">Home</a></li>
+                      <li><a href="{% url 'blog:blog' %}">Blog</a></li>
+                      <li><a href="{% url 'event:events'%}">Events</a></li>
+                      
+                    </ul>
+                  </nav>	    		
+                </div>
+            </div>
+          </header>
+
+        <section class="banner-area" id="home">
+            <div class="container">
+                <div class="row fullscreen d-flex align-items-center justify-content-center">
+                    <div class="banner-content col-lg-6 col-md-6 my-4">
+                        <h1>
+                            Astronomical Web  <br>
+                            Experience with <br>
+                            		
+                        </h1>
+                        <p class="text-white text-uppercase ">
+                            FullStack Astronaut
+                        </p>
+                    </div>
+                    <div class="banner-img-1 col-lg-6 col-md-6 mb-4">
+                        <img class="img-fluid" src="/static/img/fullstack_astronaut.png" alt="" >
+                    </div>												
+                </div>
+            </div>
+        </section>
+        <!-- End banner Area -->
+
+  
+
+        <!-- Start home-about Area -->
+        <section class="home-about-area">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 py-5">
+                        <img class="mx-auto d-block img-fluid" src="/static/img/django-ufo-v2.png" width="55%" alt="">
+                    </div>
+                    <div class="col-lg-6 description">
+                        <h6 class="text-uppercase">python</h6>
+                        <h1 id="reduce">Launching Django Rocket <br>
+                        </h1>
+                        <h5 class="py-2">
+                            fueling with python
+                        </h5>
+                        <p class="py-2">
+                                 Django is a full-stack web framework, whereas Flask is a micro and lightweight web framework. The features provided by Django help developers to build large and complex web applications. On the other hand, Flask accelerates development of simple web applications by providing the required functionality. I prefer Django but sometimes Flask might be better.</p>
+                        <a class="primary-btn text-uppercase" href="http://fullstackastronaut.com/blog/fueling-django-rocket/" target="_blank">Get Details</a>
+                    </div>
+                </div>
+            </div>	
+        </section>
+         <section class="home-about-area white">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 description ">
+                            <h6 class="text-uppercase">javascript</h6>
+                            <h1  id="reduce" >ReactJS Components <br>
+                            Detected! - Redux</h1>
+                            <h5 class="py-2">
+                                reactify the web
+                            </h5>
+                            <p class="py-2">
+                                I am using React+Redux with a bunch of well-documented best practices for building modules and components. Redux helps us in these tricky scenarios where multiple components want to share some or all of the same data, but are not closely related to one another. Redux provides a central store that can hold data from anywhere in the application.
+                            </p>
+                            <a class="primary-btn text-uppercase" href="https://www.c-sharpcorner.com/article/what-and-why-reactjs/" target="_blank">Get Details</a>
+                        </div>
+                        <div class="col-lg-6  py-5">
+                                <img class="mx-auto d-block img-fluid" src="/static/img/rect-v5.png"  width="40%" alt="">
+                            </div>
+                    </div>
+                </div>	
+            </section>
+           
+        <section class="home-about-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 py-5">
+                            <img class="mx-auto d-block img-fluid" src="/static/img/server-cloud.png" width="55%" alt="">
+                        </div>
+                        <div class="col-lg-6 description">
+                            <h6 class="text-uppercase">database</h6>
+                            <h1 id="reduce" >Space Servers <br>
+                            Activated!</h1>
+                            <h5 class="py-2">
+                                we are ready to parse data
+                            </h5>
+                            <p class="py-2">
+                                DigitalOcean and AWS are cloud service platforms that offer database storage, computer power among other functionalities. I am using Digital Ocean for deploy my web projects and AWS for parse servers and web crawlers. Check differences between these two cloud servers from details.
+                            </p>
+                            <a class="primary-btn text-uppercase" href="https://hackernoon.com/aws-vs-digitalocean-which-cloud-server-is-better-1386499a6664" target="_blank">Get Details</a>
+                        </div>
+                    </div>
+                </div>	
+            </section>
+            <section class="home-about-area white">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 description ">
+                            <h6 class="text-uppercase">android</h6>
+                            <h1  id="reduce"> Androids are making apps<br>
+                            for simplification!</h1>
+                            <h5 class="py-2">
+                                android robots eating candy
+                            </h5>
+                            <p class="py-2">
+                                Despite smartphones revolutionizing the concept of convenience, we are always looking for ways to set a new level of efficiency in our lives.  Don't worry astronauts! Android Studio is not difficult. I will help you how to launch your own apps.
+                            </p>
+                            <a class="primary-btn text-uppercase" href="https://www.c-sharpcorner.com/article/what-and-why-reactjs/" target="_blank">Get Details</a>
+                        </div>
+                        <div class="col-lg-6  py-5">
+                                <img class="mx-auto d-block img-fluid" src="/static/img/android.jpg"   alt="">
+                            </div>
+                    </div>
+                </div>	
+            </section>
+        <section class="feature-area section-gap">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-12 pb-40 header-text text-center">
+                        <h1 class="pb-10 text-white">Become a FullStack Astronaut</h1>
+                        <p class="text-white">
+                            to infinity and beyond
+                        </p>
+                    </div>
+                </div>							
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature">
+                            <a href="#" class="title d-flex flex-row">
+                                  <span class="fab fa-python challenges"></span>
+                            
+
+                                <h4>Fully Equipped</h4>
+                            </a>
+                            <p class="scifi-text">
+                                Python is a high-level, interpreted and general-purpose dynamic programming language.
+                                "Just in time" provides a solution. We will use it for <b>data analytics</b> and <b>fueling the</b>  <b class="green">django rocket.</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature">
+                            <a href="#" class="title d-flex flex-row">
+                                <span  class="fab fa-react challenges"></span>
+                                <h4>The Experimental Lab </h4>
+                            </a>
+                            <p  class="scifi-text">
+                                The <b>components</b> is used to perform web experiments on UI  space elements. We will use React for <b>data changes</b> without
+                                reloading page. Take the React Lab!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature">
+                            <a href="#" class="title d-flex flex-row">
+                                <span class="fas fa-server challenges"></span>
+                                <h4>Servers Overloaded</h4>
+                            </a>
+                            <p class="scifi-text">
+                               <b class="green">Nginx</b> service restarted. Roger that! Activate parse servers on <b>AWS</b> and create droplets in <b>Digital Ocean</b>.
+                               We will deploy the projects on servers and parse data from the web space.
+                               
+                            </p>
+                               
+                        </div>
+                    </div>						
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature">
+                            <a href="#" class="title d-flex flex-row">
+                                <span class="fas fa-database challenges"></span>
+                                <h4>Successfully Connected</h4>
+                            </a>
+                            <p class="scifi-text" >
+                                All in all, database integration is becoming a technology that more companies are investing in, especially as the quantity and connectivity of data increases.
+                                Access the <b>MySQL, PostgreSQL and MongoDB</b> for sharing data between space departmens.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature">
+                            <a href="#" class="title d-flex flex-row">
+                                <span class="fab fa-android challenges"></span>
+                                <h4>Android Robots</h4>
+                            </a>
+                            <p class="scifi-text">
+                                Use <b class="green">Android Studio</b> for development of application with Java. In addition, we have one more platform for emergency situations. Yes, it is <b>React Native.</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-feature">
+                            <a href="#" class="title d-flex flex-row">
+                                <span class="fas fa-user-astronaut challenges"></span>
+                                <h4>Extravehicular Mobility Unit</h4>
+                            </a>
+                            <p class="scifi-text">
+                                Finally! Do not forget <b>security</b> spacesuit otherwise you can not spacewalk outside of local webspacecraft. Your oxygen is Internet so <b>stay connected!</b>
+                            </p>
+                        </div>
+                    </div>	
+
+                </div>
+            </div>	
+        </section>
+        <section class="blog-area section-gap">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-12 pb-40 header-text text-center">
+                        <h1 class="pb-10">Space Web Network</h1>
+                        <p>
+                            let's share useful information between webspacecrafts 
+                        </p>
+                    </div>
+                </div>						
+                <div class="row">
+                    {% for post in posts %}
+                    <div class="col-lg-4 col-md-4 blog-left">
+                        <div class="thumb">
+                            <a href="{% url 'blog:detail' post.slug %}">
+                            <img class="img-fluid" src="/media/{{post.image}}" alt="">
+                            </a>
+                        </div>
+                        <div class="detais">
+                            <a href="{% url 'blog:detail' post.slug %}"><h4 class="my-3">{{post.title}}</h4></a>
+                            <p class="date">{{post.published}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+            </div>	
+        </section>
+        <footer class="footer-area section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="single-footer-widget">
+                            <h6>Stay Connected!</h6>
+                            <ul class="footer-nav">
+                                Join me! Let's discover web space together!<br>
+                                Challenges coming soon.
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6  col-md-12">
+                        <div class="single-footer-widget newsletter">
+                           
+                            <h6>Contact with me!</h6>
+                            <p>I will reply to your email!</p>
+                            <div id="mc_embed_signup">
+                                <form method="POST" class="form-inline" id="contact-form">
+                                     {% csrf_token %}
+                                    <div class="form-group row" style="width: 100%">
+                                        <div class="col-lg-8 col-md-12">
+                                            <input id="email" name="EMAIL" class="my-2" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                                            <textarea id="message" name="MESSAGE"class="my-2" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" ></textarea>
+                                        </div>   
+                                    </div>	
+                                    
+                                    <button id="send" type="submit" class="send-btn"></button>	
+                                    
+                                </form>
+                                
+                            </div>		
+                        </div>
+                    </div>
+                    <div class="col-lg-2  col-md-12 footer-social">
+                        <a href="https://twitter.com/coderasha" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="https://instagram.com/coderasha"  target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>						 
+                </div>
+
+                <div class="row footer-bottom d-flex justify-content-between">
+                    <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+ &copy;<script>document.write(new Date().getFullYear());</script> | FullStack Astronaut 
+</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/static/js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="/static/js/vendor/bootstrap.min.js"></script>			
+        <script src="/static/js/easing.min.js"></script>			
+        <script src="/static/js/hoverIntent.js"></script>
+        <script src="/static/js/superfish.min.js"></script>	
+        <script src="/static/js/jquery.ajaxchimp.min.js"></script>
+        <script src="/static/js/jquery.magnific-popup.min.js"></script>	
+        <script src="/static/js/owl.carousel.min.js"></script>	
+        <script src="/static/js/hexagons.min.js"></script>							
+        <script src="/static/js/jquery.nice-select.min.js"></script>	
+        <script src="/static/js/jquery.counterup.min.js"></script>
+        <script src="/static/js/waypoints.min.js"></script>							
+        <script src="/static/js/mail-script.js"></script>	
+        <script src="/static/js/main.js"></script>	
+        <script src="/static/js/ajax-calls.js"></script>	
+
+    </body>
+</html>
+
+
+

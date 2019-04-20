@@ -1,0 +1,13 @@
+
+@media (max-width: 768px) {
+    .banner-img1{
+        width: 18rem;
+    }
+  }
+  
+  @media (max-width: 466px) {
+    .banner-img1{
+        width: 18rem;
+    }
+    
+  }
