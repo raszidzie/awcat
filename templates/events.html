@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta charset="UTF-8">
-    <title>YDN</title>
+    <title>Fullstack Astronaut</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -53,18 +53,7 @@
             </div>
         </section>
 
-        <!-- Start products Area -->
-        <section class="products-area section-gap">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-12 pb-40 header-text text-center">
-                        <div class="box-c">
-                        <h1 class="pb-10 underline-small">Latest Concepts</h1>
-                    </div>
-                    </div>
-                </div>							
-        </section>
-        <!-- End products Area -->
+        
 
         <!-- Start home-about Area -->
         <section class="home-about-area">
@@ -74,7 +63,7 @@
                     <div class="col-lg-6 infinite-item">
                         <a href="{% url 'events:eventdetail' event.id%}">
                         <div class="item">
-                            <img class="mx-auto d-block img-fluid " src="/media/{{event.image}}" alt="">
+                            <img class="mx-auto d-block img-fluid " src="/media/{{event.image}}" alt="{{event.country}}">
                             <h2 class="title card">{{event.country}}</h2>
                         </div>
                         </a>

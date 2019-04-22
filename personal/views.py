@@ -6,6 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from gtts import gTTS
 from django.core.files.storage import FileSystemStorage
 import os
+from django.utils.html import strip_tags
 
 
 def home_view(request):
@@ -31,9 +32,10 @@ def mp3(request,id):
     post = get_object_or_404(Post, id=id)
     folder='media/' 
     mytext = post.description
+    stripped = strip_tags(mytext)
     mp3name = post.slug
     language = 'en'
-    myobj = gTTS(text=mytext, lang=language, slow=False)   
+    myobj = gTTS(text=stripped, lang=language, slow=False)   
     myobj.save(os.path.join('media', mp3name + ".mp3"))
     return HttpResponseRedirect(post.get_absolute_url())
 

@@ -25,7 +25,7 @@ SECRET_KEY = '&=23nhtj$z2vou#j2x0sm1*cb#=%c!xd3nr-jo*$8q%=xcs2u2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','157.230.50.44','www.fullstackastronaut.com', 'fullstackastronaut.com']
+ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','104.248.37.125']
 
 
 # Application definition

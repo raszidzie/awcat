@@ -79,9 +79,9 @@
                         <div class="single-post">
                                 <h1>
                                     {{post.title}} 
-                                    <a href="{% url 'blog:mp3' post.id %}">play</a>
+                                    <a href="{% url 'blog:mp3' post.id %}"><i class="fas fa-file-audio"></i></a>
                                     <audio controls>
-                                        <source src="/media/how-start-programming.mp3" type="audio/mpeg">
+                                        <source src="/media/{{post.slug}}.mp3" type="audio/mpeg">
                                       Your browser does not support the audio element.
                                       </audio>
                                 </h1>
