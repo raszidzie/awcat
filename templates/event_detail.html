@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  class="no-js">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="/static/img/fullstack_astronaut.png">
@@ -11,7 +11,7 @@
     <meta property="og:image" content="/static/img/fullstack_astronaut.png">
     <meta name="keywords" content="django, python, what is django, react.js, how to build website, power of python, fullstackastronaut.com">
     <meta charset="UTF-8">
-    <title>{{post.title}}</title>
+    <title>{{location.city}}</title>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -33,7 +33,7 @@
             <div class="container main-menu">
                 <div class="row align-items-center justify-content-between d-flex">
                   <div id="logo">
-                        <a href="{% url 'home'%}"><img src="/static/img/fullstack_astronaut.png" width="50rem"alt="" title="" /></a>
+                        <a href="{% url 'home'%}"><img src="/static/img/fullstack_astronaut.png" width="50rem" alt="logo" title="" /></a>
                     </div>
                     <nav id="nav-menu-container">
                             <ul class="nav-menu">
@@ -61,7 +61,6 @@
                                    
                         </h1>   
                         
-                        <p class="text-white link-nav"><a href="index.html">Blog</a>  <span class="fas fa-rocket"></span>  <a href="blog-single.html">{{post.title}}</a></p>
                     </div>                                          
                 </div>
             </div>
@@ -71,7 +70,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 post-list blog-post-list">
-                            <label class="switchSmall m5">
+                            <label for="theme" class="switchSmall m5">
                                     <p>Switch Theme</p>
                                     <input id="theme" type="checkbox">
                                     <small></small>
@@ -110,7 +109,7 @@
                     </div>
                     <div class="col-lg-4 sidebar">
                         <div class="single-widget protfolio-widget">
-                            <img src="/static/img/avatar-fa.jpg"  width="40%" style="border-radius: 50%"alt="">
+                            <img src="/static/img/avatar-fa.jpg"  width="40%" style="border-radius: 50%" alt="avatar">
                             <a href="#"><h4 style="color:rgb(55, 56, 56)">coderasha</h4></a>
                             <p>
                                     I am a fullstack_astronaut with a vast array of knowledge in many different front end and back end languages, responsive frameworks, databases, and best code practices.
@@ -144,10 +143,12 @@
                                     <form method="POST" class="form-inline" id="contact-form">
                                         {% csrf_token %}
                                        <div class="form-group row" style="width: 100%">
-                                           <div class="col-lg-8 col-md-12">
-                                               <input id="email" name="EMAIL" class="my-2" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-                                               <textarea id="message" name="MESSAGE"class="my-2" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" ></textarea>
-                                           </div>   
+                                            <div class="col-lg-8 col-md-12">
+                                                    <label style="float: left" for="email">Email</label>
+                                                    <input id="email" name="EMAIL" class="my-2" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                                                    <label style="float: left" for="message">Message</label>
+                                                    <textarea id="message" name="MESSAGE"class="my-2" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" ></textarea>
+                                                </div>   
                                        </div>	
                                        
                                        <button id="send" type="submit" class="send-btn"></button>	
@@ -158,8 +159,8 @@
                             </div>
                         </div>
                         <div class="col-lg-2  col-md-12 footer-social">
-                        <a href="https://twitter.com/coderasha" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="https://instagram.com/coderasha"  target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://twitter.com/coderasha" target="_blank"><strong class="fa fa-twitter"></strong></a>
+                        <a href="https://instagram.com/coderasha"  target="_blank"><strong class="fa fa-instagram"></strong></a>
                         </div>						
                     </div>
     

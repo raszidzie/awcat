@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  class="no-js">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="/static/img/fullstack_astronaut.png">
@@ -39,7 +39,7 @@
             <div class="container main-menu">
                 <div class="row align-items-center justify-content-between d-flex">
                   <div id="logo">
-                    <a href="{% url 'home'%}"><img src="/static/img/fullstack_astronaut.png" width="50rem"alt="logo" title="" /></a>                 
+                    <a href="{% url 'home'%}"><img src="/static/img/fullstack_astronaut.png" width="50rem" alt="logo" title="" /></a>                 
                  </div>
                  <nav id="nav-menu-container">
                         <ul class="nav-menu">
@@ -71,7 +71,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 post-list blog-post-list">
-                            <label class="switchSmall m5">
+                            <label for="theme" class="switchSmall m5">
                                     <p>Switch Theme</p>
                                 <input id="theme" type="checkbox">
                                 <small></small>
@@ -85,7 +85,7 @@
                                 <h1 id="reduce">
                                     {{post.title}}
                                 </h1>
-                                <h6>{{post.category}}</h6>
+                                <p>{{post.category}}</p>
                             </a>
                                 <p>
                                     {{post.description|truncatewords:7|safe}}
@@ -98,7 +98,6 @@
                                             <li><a href="#"><span class="fas fa-calendar-week details-row" style="color:#a015f5;"></span> <p  class="details-row">{{post.published}}</p> </a></li>
                                         </ul>
                                     </div>
-                                   
                                 </div>
                             </div>
                         </div>
@@ -121,13 +120,14 @@
                     <div class="col-lg-4 sidebar">
                         <div class="single-widget search-widget">
                             <form class="example"role="search" method="GET" action="">
-                              <input type="text" placeholder="Search Posts" name="q">
-                              <button type="submit"><i class="fa fa-search"></i></button>
+                                <label for="search">Search</label>
+                              <input id="search" type="text" placeholder="Search Posts" name="q">
+                              <button type="submit"><strong class="fa fa-search"></strong></button>
                             </form>								
                         </div>
 
                         <div class="single-widget protfolio-widget">
-                            <img src="/static/img/avatar-fa.jpg"  width="40%" style="border-radius: 50%" alt="">
+                            <img src="/static/img/avatar-fa.jpg"  width="40%" style="border-radius: 50%" alt="avatar">
                             <a href="#"><h4 style="color:rgb(55, 56, 56)">coderasha</h4></a>
                             <p>
                                     I am a fullstack_astronaut with a vast array of knowledge in many different front end and back end languages, responsive frameworks, databases, and best code practices.
@@ -166,10 +166,12 @@
                                     <form method="POST" class="form-inline" id="contact-form">
                                          {% csrf_token %}
                                         <div class="form-group row" style="width: 100%">
-                                            <div class="col-lg-8 col-md-12">
-                                                <input id="email" name="EMAIL" class="my-2" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-                                                <textarea id="message" name="MESSAGE"class="my-2" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" ></textarea>
-                                            </div>   
+                                                <div class="col-lg-8 col-md-12">
+                                                        <label style="float: left" for="email">Email</label>
+                                                        <input id="email" name="EMAIL" class="my-2" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                                                        <label style="float: left" for="message">Message</label>
+                                                        <textarea id="message" name="MESSAGE"class="my-2" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" ></textarea>
+                                                    </div>    
                                         </div>	
                                         
                                         <button id="send" type="submit" class="send-btn"></button>	
@@ -180,8 +182,8 @@
                             </div>
                         </div>
                         <div class="col-lg-2  col-md-12 footer-social">
-                            <a href="https://twitter.com/coderasha" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="https://instagram.com/coderasha"  target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://twitter.com/coderasha" target="_blank"><strong class="fa fa-twitter"></strong></a>
+                            <a href="https://instagram.com/coderasha"  target="_blank"><strong class="fa fa-instagram"></strong></a>
                         </div>						
                     </div>
     

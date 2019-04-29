@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  class="no-js">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="/static/img/fullstack_astronaut.png">
@@ -33,7 +33,7 @@
             <div class="container main-menu">
                 <div class="row align-items-center justify-content-between d-flex">
                   <div id="logo">
-                        <a href="{% url 'home'%}"><img src="/static/img/fullstack_astronaut.png" width="50rem"alt="" title="" /></a>
+                        <a href="{% url 'home'%}"><img src="/static/img/fullstack_astronaut.png" width="50rem" alt="logo" title="" /></a>
                     </div>
                     <nav id="nav-menu-container">
                             <ul class="nav-menu">
@@ -61,7 +61,7 @@
                                    
                         </h1>   
                         
-                        <p class="text-white link-nav"><a href="index.html">Blog</a>  <span class="fas fa-rocket"></span>  <a href="blog-single.html">{{post.title}}</a></p>
+                        <p class="text-white link-nav"><a href="{% url 'blog:blog' %}">Blog</a>  <span class="fas fa-rocket"></span>  <a href="#">{{post.title}}</a></p>
                     </div>                                          
                 </div>
             </div>
@@ -71,15 +71,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 post-list blog-post-list">
-                            <label class="switchSmall m5">
-                                    <p>Switch Theme</p>
+                            <label for="theme" class="switchSmall m5">
+                                    <p>Switch Theme or click icon to upload audio</p>
                                     <input id="theme" type="checkbox">
                                     <small></small>
                                     </label>
                         <div class="single-post">
+                             
                                 <h1>
                                     {{post.title}} 
-                                    <a href="{% url 'blog:mp3' post.id %}"><i class="fas fa-file-audio"></i></a>
+                                    <a href="{% url 'blog:mp3' post.id %}"><strong class="fas fa-file-audio"></strong></a>
+                                   
                                     <audio controls>
                                         <source src="/media/{{post.slug}}.mp3" type="audio/mpeg">
                                       Your browser does not support the audio element.
@@ -147,11 +149,14 @@
                                     <div class="col-lg-4 col-md-6">
                                         <form method="POST" id="comment-form">
                                             {% csrf_token %}
+                                        <label for="name">Name</label>
                                         <input id="name" name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
                                         <input type="hidden" id="date" name="date" class="my-2" value="Now">                                        
+                                        <label for="email">Email</label>
                                         <input id="email" name="email" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'" class="common-input mb-20 form-control" required="" type="email">
                                     </div>
                                     <div class="col-lg-8 col-md-6">
+                                        <label for="comment">Comment</label>
                                         <textarea id="comment" class="form-control mb-10" name="comment" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
                                         <button type="submit" class="primary-btn mt-20">Comment</button>
                                     </form>
@@ -197,10 +202,12 @@
                                     <form method="POST" class="form-inline" id="contact-form">
                                         {% csrf_token %}
                                        <div class="form-group row" style="width: 100%">
-                                           <div class="col-lg-8 col-md-12">
-                                               <input id="email" name="EMAIL" class="my-2" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-                                               <textarea id="message" name="MESSAGE"class="my-2" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" ></textarea>
-                                           </div>   
+                                            <div class="col-lg-8 col-md-12">
+                                                    <label style="float: left" for="email">Email</label>
+                                                    <input id="email" name="EMAIL" class="my-2" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                                                    <label style="float: left" for="message">Message</label>
+                                                    <textarea id="message" name="MESSAGE"class="my-2" placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" ></textarea>
+                                                </div>   
                                        </div>	
                                        
                                        <button id="send" type="submit" class="send-btn"></button>	
@@ -211,8 +218,8 @@
                             </div>
                         </div>
                         <div class="col-lg-2  col-md-12 footer-social">
-                        <a href="https://twitter.com/coderasha" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="https://instagram.com/coderasha"  target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://twitter.com/coderasha" target="_blank"><strong class="fa fa-twitter"></strong></a>
+                        <a href="https://instagram.com/coderasha"  target="_blank"><strong class="fa fa-instagram"></strong></a>
                         </div>						
                     </div>
     
